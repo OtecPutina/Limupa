@@ -1,0 +1,20 @@
+﻿@model Statistics
+<div class="container">
+    <div style="display:flex">
+        <h1>Update Statistics</h1>
+    </div>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="Number" class="form-label">Number</label>
+                <input asp-for="Number" class="form-control">
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>   <div class="mb-3">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input asp-for="Name" class="form-control">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</div>

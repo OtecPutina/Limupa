@@ -1,0 +1,49 @@
+﻿ @using Limupa.ViewModel
+ @model HomeViewModel
+ <!-- Begin Li's Breadcrumb Area -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Blog Two Column</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Li's Breadcrumb Area End Here -->
+        <!-- Begin Li's Main Blog Page Area -->
+        <div class="li-main-blog-page pt-60 pb-55">
+            <div class="container">
+                <div class="row">
+                    <!-- Begin Li's Main Content Area -->
+                    <div class="col-lg-12">
+                        <div class="row li-main-content">
+                          @foreach (Blog blog in Model.Blogs)
+                    {
+                        <div class="col-lg-12 col-md-6">
+                            <div class="li-blog-single-item pb-25">
+                                <div class="li-blog-banner">
+                                    <a asp-action="BlogSideBar" asp-controller="home"><img class="img-full" src="~/uploads/blog/@blog.ImageUrl" alt=""></a>
+                                </div>
+                                <div class="li-blog-content">
+                                    <div class="li-blog-details">
+                                        <h3 class="li-blog-heading pt-25"><a asp-action="BlogSideBar" asp-controller="home">@blog.Title</a></h3>
+                                        <div class="li-blog-meta">
+                                            <a class="author"><i class="fa fa-user"></i>Admin</a>
+                                            <a class="post-time"><i class="fa fa-calendar"></i> 25 nov 2018</a>
+                                        </div>
+                                        <p>@blog.Description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                        </div>
+                    </div>
+                    <!-- Li's Main Content Area End Here -->
+                </div>
+            </div>
+        </div>
+        <!-- Li's Main Blog Page Area End Here -->
+       

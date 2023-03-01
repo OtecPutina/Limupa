@@ -1,0 +1,42 @@
+﻿@model BigBanner
+<div class="container">
+    <div style="display:flex">
+        <h1>Update Banner</h1>
+    </div>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="ImageFile" class="form-label">ImageFile</label>
+                <input asp-for="ImageFile" class="form-control">
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+                <div style="width:200px">
+                    <img style="width:100%" src="~/uploads/bigbanner/@Model.ImageUrl">
+                </div>
+                <div>
+                    <input asp-for="ImageUrl" value="@Model.ImageUrl" type="hidden" />
+                </div>
+                <div class="mb-3">
+                          <label asp-for="Price" class="form-label">Price</label>
+                <input asp-for="Price" class="form-control">
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+               <div class="mb-3">
+                <label asp-for="Description" class="form-label">Description</label>
+                <input asp-for="Description" class="form-control">
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Title1" class="form-label">Title1</label>
+                <input asp-for="Title1" class="form-control">
+                <span asp-validation-for="Title1" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Title2" class="form-label">Title2</label>
+                <input asp-for="Title2" class="form-control">
+                <span asp-validation-for="Title2" class="text-danger"></span>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</div>

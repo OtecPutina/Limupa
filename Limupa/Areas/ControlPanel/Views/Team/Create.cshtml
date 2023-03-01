@@ -1,0 +1,52 @@
+﻿@model TeamMember
+<div>
+    <div>
+        <h1>Create Member</h1>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+    <input  asp-for="Name" class="form-control" >
+    <span asp-validation-for="Name"></span>
+  </div>
+        <div class="mb-3">
+            <label asp-for="ImageFile" class="form-label">ImageFile</label>
+            <input asp-for="ImageFile" class="form-control">
+            <span asp-validation-for="ImageFile"></span>
+        </div>
+              <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control">
+            <span asp-validation-for="Email"></span>
+        </div>
+             <div class="mb-3">
+            <label asp-for="FacebookLink" class="form-label">FacebookLink</label>
+            <input asp-for="FacebookLink" class="form-control">
+            <span asp-validation-for="FacebookLink"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="TwitterLink" class="form-label">TwitterLink</label>
+            <input asp-for="TwitterLink" class="form-control">
+            <span asp-validation-for="TwitterLink"></span>
+        </div>
+           <div class="mb-3">
+            <label asp-for="LinkedinLink" class="form-label">LinkedinLink</label>
+            <input asp-for="LinkedinLink" class="form-control">
+            <span asp-validation-for="LinkedinLink"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="GooglePlusLink" class="form-label">GooglePlusLink</label>
+            <input asp-for="GooglePlusLink" class="form-control">
+            <span asp-validation-for="GooglePlusLink"></span>
+        </div>
+        <div>
+            @*<select class="form-select" aria-label="Default select example">
+                    @foreach (Position position in ViewBag.Position)
+            {
+                 <option value="@position.Id">@position.Name</option>
+            }*@
+                    <select asp-for="PositionId" asp-items="@(new SelectList(ViewBag.Position,"Id","Name"))"></select>
+                    </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+</div>

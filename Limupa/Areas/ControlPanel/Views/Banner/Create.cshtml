@@ -1,0 +1,16 @@
+﻿@model Banner
+<div class="container">
+    <div style="display:flex">
+        <h1>Create Banner</h1>
+    </div>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                <label asp-for="ImageFile" class="form-label">ImageFile</label>
+                <input asp-for="ImageFile" class="form-control">
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+    </div>
+</div>

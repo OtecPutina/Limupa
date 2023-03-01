@@ -1,0 +1,48 @@
+﻿@using Limupa.ViewModel
+@model UserLoginViewModel
+<!-- Begin Li's Breadcrumb Area -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <ul>
+                <li><a asp-action="index" asp-controller="home">Home</a></li>
+                <li class="active">Login</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Li's Breadcrumb Area End Here -->
+<!-- Begin Login Content Area -->
+<div class="page-section mb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
+                <!-- Login Form s-->
+            </div>
+            <div class="col-12">
+                <form asp-action="login" asp-controller="accountuser" method="post">
+                    <div class="login-form">
+                        <h4 class="login-title">Login</h4>
+                        <div class="row">
+                            <div class="col-md-6 col-12 mb-20">
+                                <label asp-for="UserName">Username</label>
+                                <input asp-for="UserName" class="mb-0" placeholder="UserName">
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 col-12 mb-20">
+                                <label asp-for="Password">Password</label>
+                                <input asp-for="Password" class="mb-0" placeholder="Password">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="col-12">
+                                <button type="submit" class="register-button mt-0">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login Content Area End Here -->

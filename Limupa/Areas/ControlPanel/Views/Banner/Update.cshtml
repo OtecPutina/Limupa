@@ -1,0 +1,22 @@
+﻿@model Banner
+<div class="container">
+    <div style="display:flex">
+        <h1>Update Banner</h1>
+    </div>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="ImageFile" class="form-label">ImageFile</label>
+                <input asp-for="ImageFile" class="form-control">
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+                <div style="width:200px">
+                    <img style="width:100%" src="~/uploads/banner/@Model.ImageUrl">
+                </div>
+                <div>
+                    <input asp-for="ImageUrl" value="@Model.ImageUrl" type="hidden" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</div>

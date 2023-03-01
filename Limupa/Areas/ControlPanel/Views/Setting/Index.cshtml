@@ -1,0 +1,35 @@
+﻿@using Limupa.ViewModel
+@model HomeViewModel
+@{
+    int count = 0;
+}
+<div>
+    <div class="container">
+        <div style="display:flex">
+            <h1>Setting</h1>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Key</th>
+                        <th scope="col">Value</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Setting item in Model.Settings)
+                    {
+                        count++;
+                        <tr>
+                            <th scope="row">@count</th>
+                            <td>@item.Key</td>
+                            <td>@item.Value</td>
+                            <td><a type="submit" asp-action="update" asp-controller="setting" class="btn btn-primary" asp-route-id="@item.Id">Update</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>

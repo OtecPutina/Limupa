@@ -1,0 +1,38 @@
+﻿@using Limupa.ViewModel
+@model HomeViewModel
+@{
+    int count = 0;
+}
+<div class="container">
+    <div style="display:flex">
+        <h1>Create Position</h1>
+        <a class="btn btn-primary" asp-action="create" asp-controller="position">Create</a>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @foreach (Position position in Model.Positions)
+                    {
+                        count++;
+                        <th scope="row">@count</th>
+                        <td>@position.Name</td>
+                        <td>
+                            <a class="btn btn-primary" asp-action="update" asp-controller="position" asp-route-id="@position.Id">Update</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" asp-action="delete" asp-controller="position" asp-route-id="@position.Id">Delete</a>
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+﻿@using Limupa.ViewModel;
+@model HomeViewModel;
+        <!-- Begin Li's Breadcrumb Area -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">About Us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Li's Breadcrumb Area End Here -->
+        <!-- about wrapper start -->
+        <div class="about-us-wrapper pt-60 pb-40">
+            <div class="container">
+                <div class="row">
+                    <!-- About Text Start -->
+                    <div class="col-lg-6 order-last order-lg-first">
+                        <div class="about-text-wrap">
+                            <h2><span>Provide Best</span>Product For You</h2>
+                            <p>We provide the best Beard oile all over the world. We are the worldd best store in indi for Beard Oil. You can buy our product without any hegitation because they truste us and buy our product without any hagitation because they belive and always happy buy our product.</p>
+                            <p>Some of our customer say’s that they trust us and buy our product without any hagitation because they belive us and always happy to buy our product.</p>
+                            <p>We provide the beshat they trusted us and buy our product without any hagitation because they belive us and always happy to buy.</p>
+                        </div>
+                    </div>
+                    <!-- About Text End -->
+                    <!-- About Image Start -->
+                    <div class="col-lg-5 col-md-10">
+                        <div class="about-image-wrap">
+                            <img class="img-full" src="~/assets/images/product/large-size/13.jpg" alt="About Us" />
+                        </div>
+                    </div>
+                    <!-- About Image End -->
+                </div>
+            </div>
+        </div>
+        <!-- about wrapper end -->
+        <!-- Begin Counterup Area -->
+        <div class="counterup-area">
+            <div class="container-fluid p-0">
+                <div class="row no-gutters">
+                        <!-- Begin Limupa Counter Area -->
+                        @foreach (Statistics statistics in Model.Statistics)
+                {
+                    <div class="col-lg-3 col-md-6">
+                    <div class="limupa-counter white-smoke-bg">
+                            <div class="container">
+                                <div class="counter-img">
+                                <img src="~/assets/images/about-us/icon/@statistics.ImageUrl" alt="">
+                                </div>
+                                <div class="counter-info">
+                                    <div class="counter-number">
+                                    <h3 class="counter">@statistics.Number</h3>
+                                    </div>
+                                    <div class="counter-text">
+                                    <span>@statistics.Name</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                        <!-- limupa Counter Area End Here -->
+                </div>
+            </div>
+        </div>
+        <!-- Counterup Area End Here -->
+        <!-- team area wrapper start -->
+        <div class="team-area pt-60 pt-sm-44">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="li-section-title capitalize mb-25">
+                            <h2><span>our team</span></h2>
+                        </div>
+                    </div>
+                </div> <!-- section title end -->
+       <div class="row">
+
+      
+               @foreach (TeamMember member in Model.TeamMembers)
+        {
+              
+     <div class="col-3">
+                <div class="row">
+                <div class="team-member mb-60 mb-sm-30 mb-xs-30">
+                        <div class="team-thumb">
+                    <img src="~/uploads/member/@member.ImageUrl" alt="Our Team Member">
+                        </div>
+                        <div class="team-content text-center">
+                            <h3>@member.Name</h3>
+                            <p>@member.Position.Name</p>
+                            <a href="#">@member.Email</a>
+                            <div class="team-social">
+                                <a href="@member.FacebookLink"><i class="fa fa-facebook"></i></a>
+                                <a href="@member.TwitterLink"><i class="fa fa-twitter"></i></a>
+                                <a href="@member.LinkedinLink"><i class="fa fa-linkedin"></i></a>
+                                <a href="@member.GooglePlusLink"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                        </div>
+                    
+                 <!-- end single team member -->
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+   
+            </div>
+        </div>
+        <!-- team area wrapper end -->

@@ -1,0 +1,55 @@
+﻿@using Limupa.ViewModel
+@model HomeViewModel
+@{
+    int count = 0;
+}
+<div class="container">
+    <div style="display:flex">
+        <h1>Create Member</h1>
+        <a class="btn btn-primary" asp-action="create" asp-controller="team">Create</a>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">ImageUrl</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (TeamMember member in Model.TeamMembers)
+                {
+                    count++;
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td>@member.Name</td>
+                        <td>
+                            <div style="width:200px">
+                                <img style="width:100%" src="~/uploads/member/@member.ImageUrl">
+                            </div>
+                        </td>
+                        <td>
+                            @foreach (Position position in ViewBag.Position)
+                            {
+                                @position.Name
+                            }
+                        </td>
+                        <td>@member.Email</td>
+                        <td>
+                            <a class="btn btn-primary" asp-action="update" asp-controller="team" asp-route-id="@member.Id">Update</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" asp-action="delete" asp-controller="team" asp-route-id="@member.Id">Delete</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

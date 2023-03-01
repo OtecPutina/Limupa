@@ -1,0 +1,14 @@
+﻿@model Position
+<div>
+    <div>
+        <h1>Update Position</h1>
+    </div>
+    <form method="post">
+  <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+    <input  asp-for="Name" class="form-control" >
+    <span asp-validation-for="Name"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+</div>

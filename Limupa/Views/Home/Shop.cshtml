@@ -1,0 +1,106 @@
+﻿@using Limupa.ViewModel;
+@model HomeViewModel
+        <!-- Begin Li's Breadcrumb Area -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Shop List</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Li's Breadcrumb Area End Here -->
+        <!-- Begin Li's Content Wraper Area -->
+        <div class="content-wraper pt-60 pb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 order-1 order-lg-2">
+                        <!-- Begin Li's Banner Area -->
+                        <div class="single-banner shop-page-banner">
+                            <a href="#">
+                                <img src="~/assets/images/bg-banner/2.jpg" alt="Li's Static Banner">
+                            </a>
+                        </div>
+                        <!-- Li's Banner Area End Here -->
+                        <!-- shop-top-bar start -->
+                            </div>
+                            <!-- product-select-box start -->
+                            <!-- product-select-box end -->
+                        </div>
+                        <!-- shop-top-bar end -->
+                        <!-- shop-products-wrapper start -->
+                        <div class="shop-products-wrapper">
+                            <div class="tab-content">
+                                <div id="grid-view" class="tab-pane fade" role="tabpanel">
+                                    <div class="product-area shop-product-area">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="list-view" class="tab-pane fade product-list-view active show" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col">
+                                   @foreach (Product product in Model.Products)
+                            {
+                                <div class="row product-layout-list last-child">
+                                    <div class="col-lg-3 col-md-5 ">
+                                        <div class="product-image">
+                                            <a href="single-product.html">
+                                                <img src="~/uploads/product/@product.ImageUrl" alt="Li's Product Image">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-7">
+                                        <div class="product_desc">
+                                            <div class="product_desc_info">
+                                                <div class="product-review">
+                                                    <h5 class="manufacturer">
+                                                    </h5>
+                                                    <div class="rating-box">
+                                                    </div>
+                                                </div>
+                                                <h4><a class="product_name Open-Single" >@product.Name</a></h4>
+                                                <div class="price-box">
+                                                    @if (product.Discount > 0)
+                                                    {
+                                                        <span class="new-price new-price-2">$@(product.Price - (product.Price * product.Discount) / 100)</span>
+                                                        <span class="old-price">$@product.Price</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="new-price new-price-2">$@product.Price</span>
+                                                    }
+                                                </div>
+                                                <p>@product.Description</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="shop-add-action ">
+                                            <ul class="add-actions-link">
+                                                <li class="add-cart"><a class="add-to-basket" asp-action="AddToBasket" asp-route-productId="@product.Id" asp-controller="product">Add to cart</a></li>
+                                                <li><a class="quick-view Open-Modal" data-toggle="modal" data-target="#exampleModalCenter" data-id="@product.Id"><i class="fa fa-eye">Quick View</i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                                    }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- shop-products-wrapper end -->
+                    </div>
+                    <div class="col-lg-3 order-2 order-lg-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content Wraper Area End Here -->
+

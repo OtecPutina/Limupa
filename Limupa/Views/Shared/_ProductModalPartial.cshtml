@@ -1,0 +1,73 @@
+﻿@model Product
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</button>
+<div class="modal-inner-area row">
+    <div class="col-lg-5 col-md-6 col-sm-6">
+        <!-- Product Details Left -->
+        <div class="product-details-left">
+            <div class="product-details-images slider-navigation-1">
+                <div class="lg-image">
+                    <img src="~/uploads/product/@Model.ImageUrl" alt="product image">
+                </div>
+            </div>
+        </div>
+        <!--// Product Details Left -->
+    </div>
+
+    <div class="col-lg-7 col-md-6 col-sm-6">
+        <div class="product-details-view-content pt-60">
+            <div class="product-info">
+                <h2>@Model.Name</h2>
+                <div class="rating-box pt-20">
+                </div>
+                <div class="price-box pt-20">
+                    @if (Model.Discount > 0)
+                    {
+                        int newprice = 0;
+                        <span class="new-price new-price-2">$@(Model.Price-(Model.Price*Model.Discount)/100)</span>
+                    }
+                    else
+                    {
+                        <span class="new-price new-price-2">$@Model.Price</span>
+                    }
+                </div>
+                <div class="product-desc">
+                    <p>
+                        <span>
+                            @Model.Description
+                        </span>
+                    </p>
+                </div>
+                <div class="product-variants">
+                    <div class="produt-variants-size">
+                    </div>
+                </div>
+                <div class="single-add-to-cart">
+                    <form action="#" class="cart-quantity">
+                        <div class="quantity">
+                            <label>Quantity</label>
+                            <div class="cart-plus-minus">
+                                <input class="cart-plus-minus-box" value="1" type="text">
+                                <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                            </div>
+                        </div>
+                        <button class="add-to-cart" type="submit">Add to cart</button>
+                    </form>
+                </div>
+                <div class="product-additional-info pt-25">
+                    <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a>
+                    <div class="product-social-sharing pt-25">
+                        <ul>
+                            <li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i>Facebook</a></li>
+                            <li class="twitter"><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter"></i>Twitter</a></li>
+                            <li class="google-plus"><a href="https://myaccount.google.com/"><i class="fa fa-google-plus"></i>Google +</a></li>
+                            <li class="instagram"><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i>Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
