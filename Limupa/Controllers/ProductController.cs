@@ -231,18 +231,8 @@ namespace Limupa.Controllers
 
             return RedirectToAction("index", "home");
         }
-        public IActionResult Wishlist()
-        {
-            return View();
-        }
-        public IActionResult Delete(int id)
-        {
-            Product product = _context.Products.FirstOrDefault(x => x.Id == id);
-            if (product == null) return NotFound();
-            _context.Products.Remove(product);
-            _context.SaveChanges();
-            return View();
-        }
+  
+  
 
     }
 }
